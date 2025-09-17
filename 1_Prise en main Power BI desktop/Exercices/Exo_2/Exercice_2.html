@@ -1,250 +1,301 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formation Power BI - Exercice 2</title>
     <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        color: #333;
+        background-color: #fff;
+      }
+      .header {
+        text-align: center;
+        border-bottom: 3px solid #0078d4;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+      }
+      .header h1 {
+        color: #0078d4;
+        margin-bottom: 5px;
+        font-size: 28px;
+      }
+      .header h2 {
+        color: #666;
+        margin-top: 5px;
+        font-weight: 300;
+        font-size: 20px;
+      }
+      .exercise-title {
+        background: linear-gradient(135deg, #0078d4, #106ebe);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+      }
+      .exercise-title h3 {
+        margin: 0;
+        font-size: 22px;
+      }
+      .objective {
+        background-color: #f8f9fa;
+        border-left: 4px solid #0078d4;
+        padding: 15px 20px;
+        margin: 20px 0;
+        border-radius: 0 8px 8px 0;
+      }
+      .objective h4 {
+        margin-top: 0;
+        color: #0078d4;
+      }
+      .instructions {
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+      .instructions h4 {
+        color: #0078d4;
+        border-bottom: 2px solid #0078d4;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+      }
+      .step {
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 6px;
+        border-left: 3px solid #0078d4;
+      }
+      .step strong {
+        color: #0078d4;
+        font-size: 16px;
+      }
+      .step ul {
+        margin: 10px 0 0 20px;
+      }
+      .step li {
+        margin-bottom: 8px;
+      }
+      .question-box {
+        background-color: #fff3cd;
+        border: 1px solid #ffeaa7;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 20px 0;
+      }
+      .question-box strong {
+        color: #856404;
+      }
+      .question-options {
+        margin-top: 15px;
+      }
+      .option {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 4px;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #e0e0e0;
+        color: #666;
+        font-style: italic;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: "Courier New", monospace;
+      }
+      .highlight {
+        background-color: #fff3cd;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-weight: bold;
+      }
+      .tip {
+        background-color: #e8f5e8;
+        border-left: 4px solid #28a745;
+        padding: 10px 15px;
+        margin: 10px 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .tip strong {
+        color: #155724;
+      }
+      @media print {
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
-            background-color: #fff;
+          margin: 0;
+          padding: 15px;
+          font-size: 12px;
         }
         .header {
-            text-align: center;
-            border-bottom: 3px solid #0078d4;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-        .header h1 {
-            color: #0078d4;
-            margin-bottom: 5px;
-            font-size: 28px;
-        }
-        .header h2 {
-            color: #666;
-            margin-top: 5px;
-            font-weight: 300;
-            font-size: 20px;
-        }
-        .exercise-title {
-            background: linear-gradient(135deg, #0078d4, #106ebe);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        .exercise-title h3 {
-            margin: 0;
-            font-size: 22px;
-        }
-        .objective {
-            background-color: #f8f9fa;
-            border-left: 4px solid #0078d4;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .objective h4 {
-            margin-top: 0;
-            color: #0078d4;
-        }
-        .instructions {
-            background-color: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        .instructions h4 {
-            color: #0078d4;
-            border-bottom: 2px solid #0078d4;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
+          page-break-after: avoid;
         }
         .step {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-radius: 6px;
-            border-left: 3px solid #0078d4;
+          page-break-inside: avoid;
         }
-        .step strong {
-            color: #0078d4;
-            font-size: 16px;
-        }
-        .step ul {
-            margin: 10px 0 0 20px;
-        }
-        .step li {
-            margin-bottom: 8px;
-        }
-        .question-box {
-            background-color: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 20px 0;
-        }
-        .question-box strong {
-            color: #856404;
-        }
-        .question-options {
-            margin-top: 15px;
-        }
-        .option {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 4px;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
-            color: #666;
-            font-style: italic;
-        }
-        code {
-            background-color: #f4f4f4;
-            padding: 2px 4px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-        }
-        .highlight {
-            background-color: #fff3cd;
-            padding: 2px 4px;
-            border-radius: 3px;
-            font-weight: bold;
-        }
-        .tip {
-            background-color: #e8f5e8;
-            border-left: 4px solid #28a745;
-            padding: 10px 15px;
-            margin: 10px 0;
-            border-radius: 0 4px 4px 0;
-        }
-        .tip strong {
-            color: #155724;
-        }
-        @media print {
-            body {
-                margin: 0;
-                padding: 15px;
-                font-size: 12px;
-            }
-            .header {
-                page-break-after: avoid;
-            }
-            .step {
-                page-break-inside: avoid;
-            }
-        }
+      }
     </style>
     <script>
-        function printDocument() {
-            window.print();
-        }
-        
-        window.onload = function() {
-            const actionDiv = document.createElement('div');
-            actionDiv.style.textAlign = 'center';
-            actionDiv.style.margin = '20px 0';
-            actionDiv.innerHTML = `
+      function printDocument() {
+        window.print();
+      }
+
+      window.onload = function () {
+        const actionDiv = document.createElement("div");
+        actionDiv.style.textAlign = "center";
+        actionDiv.style.margin = "20px 0";
+        actionDiv.innerHTML = `
                 <button onclick="printDocument()" style="background-color: #0078d4; color: white; border: none; padding: 10px 20px; margin: 0 10px; border-radius: 5px; cursor: pointer;">Imprimer / Sauvegarder PDF</button>
                 <button onclick="window.location.reload()" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; margin: 0 10px; border-radius: 5px; cursor: pointer;">Actualiser</button>
             `;
-            document.querySelector('.header').after(actionDiv);
-        }
+        document.querySelector(".header").after(actionDiv);
+      };
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="header">
-        <h1>Formation Power BI Desktop</h1>
-        <h2>CHAPITRE 1 : Prise en main de Power BI Desktop</h2>
+      <h1>Formation Power BI Desktop</h1>
+      <h2>CHAPITRE 1 : Prise en main de Power BI Desktop</h2>
     </div>
 
     <div class="exercise-title">
-        <h3>EXERCICE 2 : Types de visualisations et interactions</h3>
+      <h3>EXERCICE 2 : Types de visualisations et interactions</h3>
     </div>
-
     <div class="objective">
-        <h4>🎯 Objectif :</h4>
-        <p>Découvrir les différents types de visualisations, comprendre les interactions entre les visuels et utiliser les filtres croisés.</p>
+      <h4>Contexte :</h4>
+      <p>
+        Ajoutons quelques détails à votre rapport. Nous avons déjà trouvé la
+        quantité d'articles vendus par an. Vous souhaitez maintenant en savoir
+        plus sur les bénéfices réalisés au fil des ans. La fiche est un
+        excellent choix car elle est simple et ajoute une interactivité
+        élégante.
+      </p>
+    </div>
+    <div class="objective">
+      <h4>🎯 Objectif :</h4>
+      <p>
+        Découvrir les différents types de visualisations, comprendre les
+        interactions entre les visuels et utiliser les filtres croisés.
+      </p>
     </div>
 
     <div class="instructions">
-        <h4>📋 Instructions :</h4>
+      <h4>📋 Instructions :</h4>
 
-        <div class="step">
-            <strong>1) Préparation de l'espace de travail</strong>
-            <ul>
-                <li>Dans la vue <span class="highlight">"Report"</span> (Rapport), désélectionnez tous les éléments visuels en cliquant sur une zone vide du canevas</li>
-                <li>Assurez-vous qu'aucun visuel n'est sélectionné avant de passer à l'étape suivante</li>
-            </ul>
+      <div class="step">
+        <strong>1) Préparation de l'espace de travail</strong>
+        <ul>
+          <li>
+            Dans la vue <span class="highlight">"Report"</span> (Rapport),
+            désélectionnez tous les éléments visuels en cliquant sur une zone
+            vide du canevas
+          </li>
+          <li>
+            Assurez-vous qu'aucun visuel n'est sélectionné avant de passer à
+            l'étape suivante
+          </li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <strong>2) Création d'une nouvelle visualisation</strong>
+        <ul>
+          <li>
+            Dans le volet <span class="highlight">"Fields"</span> (Champs),
+            sélectionnez le champ <code>Profit</code> de la table
+            <strong>FactSale</strong>
+          </li>
+          <li>Un diagramme à barres sera créé automatiquement</li>
+        </ul>
+        <div class="tip">
+          <strong>💡 Astuce :</strong> Vous pouvez utiliser la fonction de
+          <strong>recherche</strong> dans le volet Fields pour trouver
+          facilement les colonnes
         </div>
+      </div>
 
-        <div class="step">
-            <strong>2) Création d'une nouvelle visualisation</strong>
+      <div class="step">
+        <strong>3) Changement de type de visualisation</strong>
+        <ul>
+          <li>
+            Avec le diagramme à barres sélectionné, allez dans le volet
+            <span class="highlight">"Visualizations"</span>
+          </li>
+          <li>
+            Choisissez la visualisation
+            <span class="highlight">"Card"</span> (Fiche) pour transformer le
+            diagramme à barres en affichage textuel
+          </li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <strong>4) Organisation des visualisations</strong>
+        <ul>
+          <li>
+            Vous devriez maintenant avoir
+            <strong>deux visualisations</strong> dans votre rapport :
             <ul>
-                <li>Dans le volet <span class="highlight">"Fields"</span> (Champs), sélectionnez le champ <code>Profit</code> de la table <strong>FactSale</strong></li>
-                <li>Un diagramme à barres sera créé automatiquement</li>
+              <li>Le graphique en barres par année (Calendar Year)</li>
+              <li>La fiche du profit total</li>
             </ul>
-            <div class="tip">
-                <strong>💡 Astuce :</strong> Vous pouvez utiliser la fonction de <strong>recherche</strong> dans le volet Fields pour trouver facilement les colonnes
+          </li>
+          <li>Disposez-les et redimensionnez-les à votre convenance</li>
+          <li>
+            <strong>Important :</strong> Assurez-vous qu'il n'y ait pas de
+            chevauchement entre les deux visuels
+          </li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <strong>5) Test des interactions entre visuels</strong>
+        <ul>
+          <li>
+            Cliquez sur la barre correspondant à l'<span class="highlight"
+              >année 2014</span
+            >
+            dans le graphique en barres
+          </li>
+          <li>
+            Observez comment la fiche du bénéfice réagit à cette sélection
+          </li>
+        </ul>
+
+        <div class="question-box">
+          <strong>❓ Question :</strong> Comment la fiche du bénéfice
+          évolue-t-elle ?
+
+          <div class="question-options">
+            <div class="option">
+              A) Le montant sur la fiche passe de 9,92 millions à 2,91 millions
             </div>
-        </div>
-
-        <div class="step">
-            <strong>3) Changement de type de visualisation</strong>
-            <ul>
-                <li>Avec le diagramme à barres sélectionné, allez dans le volet <span class="highlight">"Visualizations"</span></li>
-                <li>Choisissez la visualisation <span class="highlight">"Card"</span> (Fiche) pour transformer le diagramme à barres en affichage textuel</li>
-            </ul>
-        </div>
-
-        <div class="step">
-            <strong>4) Organisation des visualisations</strong>
-            <ul>
-                <li>Vous devriez maintenant avoir <strong>deux visualisations</strong> dans votre rapport :
-                    <ul>
-                        <li>Le graphique en barres par année (Calendar Year)</li>
-                        <li>La fiche du profit total</li>
-                    </ul>
-                </li>
-                <li>Disposez-les et redimensionnez-les à votre convenance</li>
-                <li><strong>Important :</strong> Assurez-vous qu'il n'y ait pas de chevauchement entre les deux visuels</li>
-            </ul>
-        </div>
-
-        <div class="step">
-            <strong>5) Test des interactions entre visuels</strong>
-            <ul>
-                <li>Cliquez sur la barre correspondant à l'<span class="highlight">année 2014</span> dans le graphique en barres</li>
-                <li>Observez comment la fiche du bénéfice réagit à cette sélection</li>
-            </ul>
-
-            <div class="question-box">
-                <strong>❓ Question :</strong> Comment la fiche du bénéfice évolue-t-elle ?
-                
-                <div class="question-options">
-                    <div class="option">A) Le montant sur la fiche passe de 9,92 millions à 2,91 millions</div>
-                    <div class="option">B) La fiche ne change pas et affiche 9,92 millions</div>
-                    <div class="option">C) Le montant sur la fiche passe de 9,92 millions à 3,16 millions</div>
-                </div>
+            <div class="option">
+              B) La fiche ne change pas et affiche 9,92 millions
             </div>
+            <div class="option">
+              C) Le montant sur la fiche passe de 9,92 millions à 3,16 millions
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="footer">
-        <p>Formation Power BI Desktop - Chapitre 1</p>
-        <p>Document généré pour la formation professionnelle</p>
+      <p>Formation Power BI Desktop - Chapitre 1</p>
+      <p>Document généré pour la formation professionnelle</p>
     </div>
-</body>
+  </body>
 </html>
